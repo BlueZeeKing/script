@@ -25,7 +25,7 @@ export default function Home() {
           .filter((item) => Object.keys(item)[0] == filter || filter == "all")
           .map((item, index) => (
             <Card
-              onClick={() => setCurrent(current + 1)}
+              onClick={() => setCurrent(current + 1 == data.filter((item) => Object.keys(item)[0] == filter || filter == "all").length ? 0 : current+1)}
               title={Object.keys(item)[0]}
               line={item[Object.keys(item)[0]]}
               id={index}
